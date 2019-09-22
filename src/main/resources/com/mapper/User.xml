@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace命名空间，使用的是类路径 所以需要用.分隔 -->
+<mapper namespace="com.mapper.UserMapper">
+
+    <select id="aaa" resultType="map">
+		select name,password from test
+	</select>
+</mapper>

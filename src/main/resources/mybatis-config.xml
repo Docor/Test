@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 引入属性文件 -->
+    <properties resource="datebase.properties"></properties>
+    <!-- 添加要产生别名的实体类的包扫描 -->
+    <typeAliases>
+        <package name="com.entity" />
+    </typeAliases>
+
+    <!-- 环境 default指定默认环境id -->
+    <environments default="dev">
+        <environment id="dev">
+            <!-- 事务 -->
+            <transactionManager type="JDBC" />
+            <!-- 数据源 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}" />
+                <property name="url" value="${jdbc.url}" />
+                <property name="username" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!-- mapper文件列表 -->
+        <!-- 注意：这是从当前路径下的文件目录，所以需要用/分割 -->
+         <!--<mapper resource="Test/com/mapper/User.xml" />-->
+        <mapper resource="com/mapper/User.xml"></mapper>
+        <!-- 添加mapper文件的包扫描 -->
+        <!--<package name="com" />-->
+    </mappers>
+</configuration>
